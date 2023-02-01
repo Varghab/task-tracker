@@ -5,7 +5,6 @@ function App() {
   return (
       <div className="App">
           <Box />
-          <p className='info'>Made with❤️by Varghab</p>
       </div>
   );
 }
