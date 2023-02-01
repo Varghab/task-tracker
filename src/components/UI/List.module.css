@@ -1,0 +1,99 @@
+.listWrapper{
+    padding: 10px 7px;
+    background-color: #ffffff;
+    margin: 15px 0;
+    border-radius: 5px;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    transition: .2s all ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.checkbox{
+    width:25px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.checkbox:checked ~ li{
+    text-decoration: line-through;
+}
+
+.checkbox:has(li){
+    background-color: #ef0000 !important;
+}
+.taskListDone{
+    text-decoration: line-through;
+    font-size: 20px;
+    list-style-type: none ;
+    box-sizing: border-box;
+    width: 100%;
+    word-break: break-all;  
+}
+
+li{
+    font-size: 20px;
+    list-style-type: none ;
+    box-sizing: border-box;
+    width: 100%;
+    word-break: break-all;
+}
+
+.listWrapper:hover{
+    transform: scale(1.02);
+    background-color: rgb(206, 206, 206);
+}
+.iconWrapper{
+    /* width: 10rem; */
+    display: flex;
+    box-sizing: border-box;
+}
+
+#delete{
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+#edit{
+    cursor: pointer;
+    color: rgb(0, 255, 47);
+    font-size: 18px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.listAnimate{
+    animation-name: moveLeft;
+    animation-duration: 3s;
+}
+
+@keyframes moveLeft {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+
+@media only screen and (max-width: 350px) {
+    .listWrapper{
+        flex-direction: column;
+
+    }
+    .iconWrapper{
+        margin-top: 10px;
+    }
+    img:not(#delete){
+        margin-left: 0 !important;
+    }
+}

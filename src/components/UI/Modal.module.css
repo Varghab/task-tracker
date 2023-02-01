@@ -1,0 +1,37 @@
+.backdrop{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.395);
+    z-index: 20;
+    height: 100%;
+    position: fixed;
+}
+
+.overlay{
+    display: flex;
+    z-index: 30;
+    position: absolute;
+    justify-content: center;
+    background-color: rgb(3, 22, 109);
+    /* width: 90rem; */
+    width: 90%;
+    max-width: 40%;
+    min-width: 20rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 14px;
+
+}
+
+@media only screen and (max-width:355px) {
+    .overlay{
+        width: 90%;
+        min-width: 14rem;
+    }
+}
+@media only screen and (max-width:244px) {
+    .overlay{
+        width: 90%;
+        min-width: 10rem;
+    }
+}
