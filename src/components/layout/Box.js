@@ -17,7 +17,7 @@ function Box(props) {
     const [editMode, setEditMode] = useState(false);
     const [editId, setEditId] = useState(null);
     const [modal,setModal] = useState({id:"",isValid:false});
-    
+
     const attributes = {
         type:"text",
         placeholder:"Add your task",
@@ -91,6 +91,7 @@ function Box(props) {
         <div className={classes.wrapper}>
                 <Wrapper>
                     <h1 className={classes.mainHeading}>Task Tracker</h1>
+                    <p className={classes.mainPara}>Track you tasks here and meet your daily goals more faster.</p>
                     <Input editMode={editMode} onDeleteHandler={onDeleteHandler} error={error} onSubmit = {onSubmitHandler} ref={task} attr = {attributes} />
                     <h3 className={classes.yourtask}>{todos.length>=1?"Your Tasks":"No Tasks"}</h3>
                     {todos.map((todo)=>{
