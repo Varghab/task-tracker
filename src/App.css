@@ -5,6 +5,12 @@
   width: 100%;
   height: 100vh;
   background-color: #03166D;
+  flex-direction: column
 }
 
+.info{
+  position: fixed;
+  color: white;
+  bottom: 20px;
+}
 
