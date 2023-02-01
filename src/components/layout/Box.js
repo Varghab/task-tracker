@@ -40,7 +40,7 @@ function Box(props) {
             task.current.value = "";
             toast.success('Task edited!', {
                 position: "bottom-center",
-                autoClose: 2000,
+                autoClose: 1500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -56,7 +56,7 @@ function Box(props) {
             task.current.value = "";
             toast.success('New Task Added!', {
                 position: "bottom-center",
-                autoClose: 2000,
+                autoClose: 1500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
