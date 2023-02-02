@@ -10,8 +10,10 @@ function List(props) {
         <>
         {props.modal.isValid? <Warning onCloseHandler={props.onCloseHandler} onClick={() => props.onDeleteHandler(props.modal.id)} warning="Do you really want to delete?" />:null}  
         <div className={`${classes.listWrapper}`}>
-            <input id={props.id} onClick={props.onCheckHandler} className={classes.checkbox} type="checkbox"></input>
-            <li>{props.value}</li>
+            <div className={classes.listBox}>
+                <input id={props.id} onClick={props.onCheckHandler} className={classes.checkbox} type="checkbox"></input>
+                <li>{props.value}</li>
+            </div>
             <div className={classes.iconWrapper}>
                 <img src={edit} alt="edit-png" id={classes.edit} onClick={()=> props.onEditHandler(props.id)}></img>
                 <img src={trash} alt="trash-png" id={classes.delete} onClick={() => props.clicked(props.id)}></img>
