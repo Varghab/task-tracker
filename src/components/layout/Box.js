@@ -8,15 +8,30 @@ import Wrapper from '../UI/Wrapper';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '../UI/Button';
+import { useEffect } from 'react';
 
-function Box(props) {
+
+const getFromLocal = () =>{
+    const task = localStorage.getItem("tasks");
+    if(task){
+        return JSON.parse(localStorage.getItem("tasks"));
+    }else{
+        return [];
+    }
+}
+
+function Box() {
     const task = useRef();
 
-    const[todos,setTodos] = useState([]);
+    const[todos,setTodos] = useState(getFromLocal());
     const[error,setError] = useState(false);
     const [editMode, setEditMode] = useState(false);
     const [editId, setEditId] = useState(null);
     const [modal,setModal] = useState({id:"",isValid:false});
+
+    useEffect(()=>{
+        localStorage.setItem("tasks", JSON.stringify(todos));
+    },[todos])
 
     const attributes = {
         type:"text",
@@ -40,7 +55,7 @@ function Box(props) {
             task.current.value = "";
             toast.success('Task edited!', {
                 position: "bottom-center",
-                autoClose: 1500,
+                autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -56,7 +71,7 @@ function Box(props) {
             task.current.value = "";
             toast.success('New Task Added!', {
                 position: "bottom-center",
-                autoClose: 1500,
+                autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
